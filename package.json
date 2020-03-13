@@ -1,0 +1,17 @@
+{
+  "name": "purescript-truffle-hd-wallet-provider",
+  "version": "0.1.0",
+  "description": "HD Wallet-enabled Web3 provider. Use it to sign transactions for addresses derived from a 12 or 24 word mnemonic.",
+  "main": "index.js",
+  "repository": "git@github.com:Pixura/purescript-truffle-hd-wallet-provider.git",
+  "author": "Charles Crain <craincharles@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "purescript": "^0.13.6",
+    "purty": "^6.0.2",
+    "spago": "^0.14.0"
+  },
+  "dependencies": {
+    "@truffle/hdwallet-provider": "^1.0.33"
+  }
+}
