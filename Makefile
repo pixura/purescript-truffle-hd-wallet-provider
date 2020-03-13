@@ -1,4 +1,4 @@
-.PHONY: help
+.PHONY: help install build test
 .DEFAULT_GOAL := help
 
 ######################################################
@@ -18,5 +18,21 @@ install: ## install dependencies
 ######################################################
 #### Build
 ######################################################
-build:
+build: ## build purs modules
 	yarn spago build
+
+######################################################
+#### Test
+######################################################
+test: ## run tests
+	make deploy-test-chain && \
+	sleep 3 && \
+	yarn spago test; \
+	make takedown-test-chain;
+
+deploy-test-chain: ## Deploys the test chain
+	docker-compose -p hd-wallet-provider up -d
+
+takedown-test-chain: ## Removes chain containers and wipes volumes
+	docker-compose -p hd-wallet-provider kill && \
+	docker-compose -p hd-wallet-provider down -v
