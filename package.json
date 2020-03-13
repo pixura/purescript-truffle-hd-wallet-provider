@@ -12,6 +12,7 @@
     "spago": "^0.14.0"
   },
   "dependencies": {
+    "secp256k1": "^4.0.0",
     "@truffle/hdwallet-provider": "1.0.33",
     "ethjs-provider-http": "^0.1.6"
   }
